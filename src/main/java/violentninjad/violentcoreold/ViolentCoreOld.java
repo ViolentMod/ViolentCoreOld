@@ -1,6 +1,12 @@
 package violentninjad.violentcoreold;
 
+import net.minecraft.creativetab.CreativeTabs;
+import net.minecraftforge.common.Configuration;
+import violentninjad.violentcoreold.creativetab.CreativeTabViolentMod;
+import violentninjad.violentcoreold.item.ModItems;
 import violentninjad.violentcoreold.proxy.IProxy;
+import violentninjad.violentcoreold.reference.ItemIds;
+import violentninjad.violentcoreold.reference.ItemNames;
 import violentninjad.violentcoreold.reference.ModInfo;
 import violentninjad.violentcoreold.reference.ProxyRef;
 import violentninjad.violentcoreold.util.LogHelper;
@@ -23,11 +29,26 @@ public class ViolentCoreOld {
 	 
 	 @SidedProxy(clientSide = ProxyRef.CLIENT_PROXY, serverSide = ProxyRef.SERVER_PROXY)
 	 public static IProxy proxy;
+	 
+	 public static CreativeTabs tabsViolentMod = new CreativeTabViolentMod(CreativeTabs.getNextID());
+
 
 	 
 	 @EventHandler
 	 public void preInit(FMLPreInitializationEvent event) {
+		 
 		 LogHelper.init();
+		 
+		 Configuration config = new Configuration(event.getSuggestedConfigurationFile());
+
+		 config.load();
+
+		 ItemIds.TAB_PICTURE = config.getItem(ItemNames.TAB_PICTURE_NAME, 3301).getInt();
+		 	
+		 config.save();
+		 
+		 ModItems.init();
+		 
 	 }
 	 
 	 @EventHandler
@@ -39,6 +60,8 @@ public class ViolentCoreOld {
 	 public void postInit(FMLPostInitializationEvent event) {
 		 
 	 }
+	 
+	 
 
 
 }

@@ -1,14 +1,14 @@
 [
 {
-  "modid": "examplemod",
-  "name": "Example Mod",
-  "description": "Example placeholder mod.",
-  "version": "${version}",
-  "mcversion": "${mcversion}",
-  "url": "",
+  "modid": "ViolentCoreOld",
+  "name": "Violent Core",
+  "description": "A core mod for all of my mods.",
+  "version": "1.6.4",
+  "mcversion": "1.6.4",
+  "url": "https://github.com/ViolentMod/ViolentCoreOld",
   "updateUrl": "",
-  "authors": ["ExampleDude"],
-  "credits": "The Forge and FML guys, for making this example",
+  "authors": ["ViolentNinjaD"],
+  "credits": "Thanks to a lot of people on GitHub as their code really helped me :)",
   "logoFile": "",
   "screenshots": [],
   "dependencies": []
