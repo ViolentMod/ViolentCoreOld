@@ -1,10 +1,13 @@
 package violentninjad.violentcoreold;
 
+import violentninjad.violentcoreold.proxy.IProxy;
 import violentninjad.violentcoreold.reference.ModInfo;
+import violentninjad.violentcoreold.reference.ProxyRef;
 import violentninjad.violentcoreold.util.LogHelper;
 import cpw.mods.fml.common.Mod;
 import cpw.mods.fml.common.Mod.EventHandler;
 import cpw.mods.fml.common.Mod.Instance;
+import cpw.mods.fml.common.SidedProxy;
 import cpw.mods.fml.common.event.FMLInitializationEvent;
 import cpw.mods.fml.common.event.FMLPostInitializationEvent;
 import cpw.mods.fml.common.event.FMLPreInitializationEvent;
@@ -17,6 +20,10 @@ public class ViolentCoreOld {
 	
 	 @Instance(ModInfo.MOD_ID)
 	 public static ViolentCoreOld instance;
+	 
+	 @SidedProxy(clientSide = ProxyRef.CLIENT_PROXY, serverSide = ProxyRef.SERVER_PROXY)
+	 public static IProxy proxy;
+
 	 
 	 @EventHandler
 	 public void preInit(FMLPreInitializationEvent event) {
