@@ -1,9 +1,10 @@
 package violentninjad.violentcoreold;
 
+import violentninjad.violentcoreold.reference.ModInfo;
 import cpw.mods.fml.common.Mod;
 
 
-@Mod(modid="ViolentCoreOld", name="Violent Core", version="1.6.4")
+@Mod(modid=ModInfo.MOD_ID, name=ModInfo.MOD_NAME, version=ModInfo.MOD_VERSION)
 public class ViolentCoreOld {
 
 }
